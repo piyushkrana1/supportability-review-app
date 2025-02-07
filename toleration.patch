@@ -1,0 +1,25 @@
+diff --git a/pkg/supportability-review-app/edit/sr.cattle.io.reviewbundle.vue b/pkg/supportability-review-app/edit/sr.cattle.io.reviewbundle.vue
+index 08673e3..30a9c3b 100644
+--- a/pkg/supportability-review-app/edit/sr.cattle.io.reviewbundle.vue
++++ b/pkg/supportability-review-app/edit/sr.cattle.io.reviewbundle.vue
+@@ -31,10 +31,6 @@ export default {
+     if (!this.value.metadata.name) {
+       this.value.metadata.generateName = 'review-bundle-';
+     }
+-    if (!this.value.spec) {
+-      this.value.spec = {};
+-      this.value.spec.tolerations = [];
+-    }
+     return {
+       description: '',
+       customName: '',
+@@ -142,9 +138,6 @@ export default {
+ 
+       <p v-if="!isCustomNameValid" class="error-text">Bundle Name must be upto 30 characters.</p>
+ 
+-      <label for="tolerations">Tolerations</label>
+-      <Tolerations v-model="value.spec.tolerations" :mode="mode" />
+-
+       <label for="description">Description</label>
+       <div class="textarea-container">
+         <textarea id="description" v-model="description" placeholder="Enter bundle Description" />
